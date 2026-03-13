@@ -19,7 +19,7 @@ export default function RootLayout({
         <div className="fixed inset-0 z-0 pointer-events-none">
           <img
             src="/finedining.jpg"
-            className="absolute inset-0 w-full h-full object-cover blur-lg scale-110 opacity-40"
+            className="absolute inset-0 w-full h-full object-cover blur-none scale-110 opacity-40"
           />
         </div>
 
