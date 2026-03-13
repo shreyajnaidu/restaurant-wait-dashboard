@@ -1,11 +1,17 @@
 'use client';
+import Link from "next/link"
 import { useState } from 'react';
 import Header from '@/components/Header';
 import WaitTimeCard from '@/components/WaitTimeCard';
 import TableGrid from '@/components/TableGrid';
 import WaitlistForm from '@/components/WaitlistForm';
 import { dummyTables } from '@/data/dummyTables';
-
+<Link
+  href="/orders"
+  className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold"
+>
+  New Order
+</Link>
 export default function Home() {
 
   const [waitlist, setWaitlist] = useState<any[]>([]);
