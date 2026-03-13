@@ -16,12 +16,14 @@ export default function RootLayout({
       <body className="antialiased min-h-screen">
 
         {/* Fine Dining Background Image */}
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          <img
-            src="/finedining.jpg"
-            className="absolute inset-0 w-full h-full object-cover blur-none scale-110 opacity-40"
-          />
-        </div>
+        <div
+  className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/finedining.jpg')",
+    filter: "blur(0px) brightness(0.7)",
+    transform: "scale(1.1)"
+  }}
+></div>
 
         {/* Background decoration container */}
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
