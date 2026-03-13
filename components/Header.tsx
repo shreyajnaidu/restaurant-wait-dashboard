@@ -27,7 +27,7 @@ const Header = () => {
       {/* Left Side */}
       <div className="text-center md:text-left mb-4 md:mb-0">
         <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
-          Spice Garden
+          Notch on Top
         </h1>
         <p className="text-slate-400 text-sm font-medium mt-1">
           Live Table Dashboard

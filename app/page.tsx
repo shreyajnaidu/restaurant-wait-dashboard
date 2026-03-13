@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import Header from '../components/Header';
-import WaitTimeCard from '../components/WaitTimeCard';
-import TableGrid from '../components/TableGrid';
-import WaitlistForm from '../components/WaitlistForm';
-import { dummyTables } from '../data/dummyTables';
+import Header from '@/components/Header';
+import WaitTimeCard from '@/components/WaitTimeCard';
+import TableGrid from '@/components/TableGrid';
+import WaitlistForm from '@/components/WaitlistForm';
+import { dummyTables } from '@/data/dummyTables';
 
 export default function Home() {
 
@@ -31,15 +31,18 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full px-4 py-8 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto space-y-8">
-        
+
+        {/* Header */}
         <Header />
 
+        {/* Wait Time Card */}
         <section className="w-full py-4">
           <WaitTimeCard waitMinutes={waitTime} nextFreeTime={nextFreeTime} />
         </section>
 
+        {/* Table grid + form */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
+
           <div className="lg:col-span-2 w-full">
             <TableGrid tables={dummyTables} />
           </div>
@@ -47,35 +50,50 @@ export default function Home() {
           <div className="w-full">
             <WaitlistForm onJoin={addToWaitlist} />
           </div>
-          
+
         </div>
 
-        {/* Live Waitlist */}
+        {/* Waitlist Queue */}
         <div className="glass rounded-2xl p-6">
           <h2 className="text-xl font-bold text-white mb-4">
             Live Waitlist
           </h2>
 
-          {waitlist.length === 0 ? (
+          {waitlist.length === 0 && (
             <p className="text-slate-400">No customers waiting.</p>
-          ) : (
-            <ul className="space-y-2">
-              {waitlist.map((customer, index) => (
-                <li
-                  key={index}
-                  className="bg-slate-800/60 border border-slate-700 rounded-lg p-3 flex justify-between"
-                >
-                  <span className="text-white font-medium">
-                    {index + 1}. {customer.name}
-                  </span>
-
-                  <span className="text-slate-400">
-                    Party of {customer.partySize} • {customer.time || "ASAP"}
-                  </span>
-                </li>
-              ))}
-            </ul>
           )}
+
+          <ul className="space-y-3">
+            {waitlist.map((customer, index) => (
+              <li
+                key={index}
+                className="bg-slate-800/60 border border-slate-700 rounded-lg p-4 flex items-center justify-between"
+              >
+
+                {/* Queue number */}
+                <span className="text-indigo-400 font-bold text-lg">
+                  #{index + 1}
+                </span>
+
+                {/* Customer name */}
+                <span className="text-white font-medium">
+                  {customer.name}
+                </span>
+
+                {/* Party size */}
+                <span className="text-slate-400">
+                  Party of {customer.partySize}
+                </span>
+
+                {/* Phone */}
+                <span className="text-slate-500 text-sm hidden md:block">
+                  {customer.phone}
+                </span>
+
+              </li>
+            ))}
+          </ul>
+
         </div>
 
       </div>
