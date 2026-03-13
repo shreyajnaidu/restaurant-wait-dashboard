@@ -13,7 +13,9 @@ export default function OrdersPage() {
   const addItem = (item: any) => {
     setOrderItems(prev => [...prev, item])
   }
-
+  const removeItem = (index: number) => {
+  setOrderItems(prev => prev.filter((_, i) => i !== index))
+}
   const total = orderItems.reduce((sum, item) => sum + item.price, 0)
 
   return (
@@ -79,14 +81,24 @@ export default function OrdersPage() {
         )}
 
         {orderItems.map((item, index) => (
-          <div
-            key={index}
-            className="flex justify-between text-slate-300 mb-1"
-          >
-            <span>{item.name}</span>
-            <span>₹{item.price}</span>
-          </div>
-        ))}
+  <div
+    key={index}
+    className="flex justify-between items-center text-slate-300 mb-2"
+  >
+    <span>{item.name}</span>
+
+    <div className="flex items-center gap-3">
+      <span>₹{item.price}</span>
+
+      <button
+        onClick={() => removeItem(index)}
+        className="text-red-400 hover:text-red-300 text-sm"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+))}
 
         <div className="border-t border-slate-700 mt-4 pt-4 flex justify-between text-white font-bold">
           <span>Total</span>
