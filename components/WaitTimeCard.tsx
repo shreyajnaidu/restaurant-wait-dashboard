@@ -12,8 +12,8 @@ const WaitTimeCard: React.FC<WaitTimeCardProps> = ({ waitMinutes, nextFreeTime }
     <div className="glass w-full max-w-2xl mx-auto rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl flex flex-col items-center justify-center text-center">
       
       {/* Decorative Gradient Orbs */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-indigo-600/20 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-emerald-600/20 rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2"></div>
+     <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-700/30 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-amber-700/30 rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
       <div className="relative z-10 w-full space-y-6">
         
@@ -33,7 +33,7 @@ const WaitTimeCard: React.FC<WaitTimeCardProps> = ({ waitMinutes, nextFreeTime }
         {/* Divider */}
         <div className="flex items-center justify-center gap-4 py-4">
           <div className="h-px w-1/4 bg-gradient-to-r from-transparent to-slate-600"></div>
-          <div className="w-2 h-2 rounded-full bg-indigo-500 ring-4 ring-slate-900/50"></div>
+          <div className="w-2 h-2 rounded-full bg-emerald-400 ring-4 ring-slate-900/50"></div>
           <div className="h-px w-1/4 bg-gradient-to-l from-transparent to-slate-600"></div>
         </div>
 
